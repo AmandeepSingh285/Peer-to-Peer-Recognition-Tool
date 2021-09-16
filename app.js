@@ -7,7 +7,7 @@ const date=require(__dirname + "/date.js");
 
 const app=express();
 
-mongoose.connect("mongodb://localhost:27017/tempDB",{useNewUrlParser: true});
+mongoose.connect("mongodb://localhost:27017/projectDB",{useNewUrlParser: true});
 
 const userSchema=new mongoose.Schema ({
     Username: String,
