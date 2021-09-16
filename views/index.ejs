@@ -1,0 +1,59 @@
+<%- include("header") -%>
+
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="start">
+        <a class="navbar-brand" href="#start">CompanyName</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#start">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Logout <span class="sr-only">(current)</span></a>
+            </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" method="GET" action="/giveReco">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="left">
+        <h2>Welcome <%= nameOfUser %></h2>
+        <h4>Points Left: <%= pointsLeft %></h4>
+        <h4>Points Awarded: <%= pointsGained %></h4>
+        <h4>Click <a href="/recognition">here</a> to view recognition awarded</h4>
+        <h4>Click <a href="/giveReco">here</a> to recognize users</h4>
+    </div>
+    <div class="right">
+        <table>
+            <tr>
+                <th>Awarded On</th>
+                <th>Awarded To</th>
+                <th>Awarded By</th>
+                <th>Remarks</th>
+            </tr>
+            <% console.log("check") %>
+            <% console.log(recoDetails) %>
+            <% if (recoDetails.length > 0){ %>
+                <% recoDetails.forEach(function(data){  %>
+                    <tr>
+                        <td><%= data.RewardedOn %></td>
+                        <td><%= data.AwardedTo %></td>
+                        <td><%= data.AwardedBy %></td>
+                        <td><%= data.Remarks %></td>
+                    </tr>
+                <% }); %>
+            <% } %>
+        </table>
+    </div>
+
+<%- include("footer") -%>

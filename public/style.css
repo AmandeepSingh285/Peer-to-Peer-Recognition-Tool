@@ -1,0 +1,35 @@
+body {
+    background: #222D32;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+.left {
+    width: 40%;
+    float: left;
+    height: 15rem;
+}
+
+.right {
+    float: left;
+    width: 60%;
+    height: 38rem;
+    overflow-y: auto;
+}
+
+table {
+    margin: 10px;
+    border: 2px solid white;
+    padding: 5px;
+    min-width: 90%;
+    text-align: center;
+}
+
+td,th {
+    padding: 0 15px;
+    border: 0.5px solid white;
+}
+
+nav {
+    margin-bottom: 40px;
+}
